@@ -1,9 +1,9 @@
-//Scopes of variables-
+//Scopes of variables---------
 /* Variables created in globally can be accessed
 in a block scope, but variables declared inside a block
 scope cannot be access outside of the scope itself */
 
-//Global scope vs block scope
+//Global scope vs block scope-----------
 let a = 300     //variable declared outside scope(globally) can be accessed inside block scope as well
 if (true) {
     let a = 10  //variable declared using let and const keyword inside the scope can only accessed within the scope itself
@@ -17,7 +17,7 @@ if (true) {
 
 
 
-//Nested scope(functions)
+//Nested scope(functions)---------
 function one(){
     const username = "sammir"
 
@@ -31,7 +31,7 @@ function one(){
 one()
 
 
-//nested scope(if condition)
+//nested scope(if condition)--------
 if (true) {
     const username = "kumar"
     if (username === "kumar") {
@@ -47,7 +47,7 @@ if (true) {
 
 
 // ++++++++++++++++++++++++++ Interesting factz about functions +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//Declaring functions in different ways
+//Declaring functions in different ways-----------
 //(i)
 // function addone(num){
 //     return num+1
@@ -61,7 +61,8 @@ if (true) {
 // console.log(addTwo(5));
 
 
-//Calling the functions
+
+//Calling the functions--------
 //(1) Calling function(i) throws no error
 console.log(addone(5));
 function addone(num){
