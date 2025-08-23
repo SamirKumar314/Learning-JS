@@ -7,7 +7,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-vscode.live-server"
+				"ritwickdey.LiveServer"
 			]
 		}
 	}
