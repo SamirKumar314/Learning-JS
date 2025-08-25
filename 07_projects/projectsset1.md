@@ -1,7 +1,9 @@
 # Projects related to DOM
 
 ## Project link
-[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-azsbc7vk?file=index.html)
+[Chai aur code project link](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
+
+[my project link](https://stackblitz.com/edit/dom-project-chaiaurcode-azsbc7vk?file=index.html)
 
 
 # Solution Code
