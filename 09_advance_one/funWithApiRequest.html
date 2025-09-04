@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request </title>
+    <style>
+        #image {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+        #imgId {
+            width: 50%;
+            height: auto;
+        }
+        #details {
+            text-align: center;
+        }
+        .container{
+            border: 2px solid white;
+            border-radius: 10px;
+            max-width: 400px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <div class="container">
+        <div id="image"><i>image goes here</i></div>
+        <div id="details">
+            <div id="name">details are here</div>
+            <div id="loginid">details are here</div>
+            <div id="flr">details are here</div>
+            <div id="flg">details are here</div>
+            <div id="repo">details are here</div>
+        </div>
+        <span></span>
+        
+    </div>
+</body>
+
+<script>
+    const xhr = new XMLHttpRequest()
+    const requestUrl = 'https://api.github.com/users/SamirKumar314'    
+
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data)
+            // console.log(data.avatar_url)
+            // console.log(data.followers)
+            // console.log(data.following)
+            // console.log(data.public_repos)
+            if (!data) {
+                console.log('couldnt fetch data');
+            }else{
+                document.querySelector('#image').innerHTML = `<img id="imgId" src="${data.avatar_url}" alt="">`
+                document.querySelector('#name').innerHTML = `<span>Name: ${data.name}</span>`
+                document.querySelector('#loginid').innerHTML = `<span>Github ID: ${data.login}</span>`
+                document.querySelector('#flr').innerHTML = `<span>Followers: ${data.followers}</span>`
+                document.querySelector('#flg').innerHTML = `<span>Following: ${data.following}</span>`
+                document.querySelector('#repo').innerHTML = `<span>Public Repo: ${data.public_repos}</span>`
+            }
+        }
+    }
+    xhr.send()
+    
+</script>
+</html>
