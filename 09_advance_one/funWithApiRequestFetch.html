@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request </title>
+    <style>
+        #image {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 5px;
+        }
+        #imgId {
+            width: 50%;
+            height: auto;
+        }
+        #details {
+            text-align: center;
+        }
+        .container{
+            border: 2px solid white;
+            border-radius: 10px;
+            max-width: 400px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <div class="container">
+        <div id="image"><i>image goes here</i></div>
+        <div id="details">
+            <div id="name">details are here</div>
+            <div id="loginid">details are here</div>
+            <div id="flr">details are here</div>
+            <div id="flg">details are here</div>
+            <div id="repo">details are here</div>
+        </div>
+        <span></span>
+        
+    </div>
+</body>
+
+<script>
+    fetch('https://api.github.com/users/SamirKumar314')
+    .then((response) => {
+        return response.json()
+    })
+    .then((data) => {
+        console.log(data);
+        if (data.status === '404') {
+            console.log(`${data.message} ${data.status}`);
+            
+        } else {
+            const image = document.querySelector('#image')
+            const name = document.querySelector('#name')
+            const loginid = document.querySelector('#loginid')
+            const follower = document.querySelector('#flr')
+            const following = document.querySelector('#flg')
+            const repo = document.querySelector('#repo')
+    
+            image.innerHTML = `<img id="imgId" src="${data.avatar_url}" alt="">`
+            name.innerHTML = `<span>Name: ${data.name}</span>`
+            loginid.innerHTML = `<span>Github ID: ${data.login}</span>`
+            follower.innerHTML = `<span>Followers: ${data.followers}</span>`
+            following.innerHTML = `<span>Following: ${data.following}</span>`
+            repo.innerHTML = `<span>Public Repo: ${data.public_repos}</span>`
+            
+        }
+
+    })
+    .catch((error) => {
+        console.log('E: ', error)
+    })
+</script>
+</html>
