@@ -28,7 +28,7 @@ function User(username, loginCount, isLoggedIn){
         console.log(`Welcome ${this.username}`);
         
     }
-    return this
+    return this   //the values are returned implicitly
 }
 
 const userOne = new User("samir", 12, true)
