@@ -51,10 +51,7 @@
         if (xhr.readyState === 4) {
             const data = JSON.parse(this.responseText)
             console.log(data)
-            // console.log(data.avatar_url)
-            // console.log(data.followers)
-            // console.log(data.following)
-            // console.log(data.public_repos)
+            
             if (!data) {
                 console.log('couldnt fetch data');
             }else{
